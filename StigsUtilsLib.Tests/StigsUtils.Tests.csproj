@@ -1,0 +1,101 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <NoWarn>1701;1702;1591</NoWarn>
+    <LangVersion>latest</LangVersion>
+    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="TestData\empty.txt" />
+    <None Remove="TestData\FileServiceTestData\file1.txt" />
+    <None Remove="TestData\FileServiceTestData\file2.txt" />
+    <None Remove="TestData\FileServiceTestData\TestDirA\fileA-1.txt" />
+    <None Remove="TestData\FileServiceTestData\TestDirA\fileA-2.txt" />
+    <None Remove="TestData\FileServiceTestData\TestDirA\TestDirA-A\fileA-A-1.txt" />
+    <None Remove="TestData\FileServiceTestData\TestDirA\TestDirA-A\fileA-A-2.txt" />
+    <None Remove="TestData\FileServiceTestData\TestDirA\TestDirA-B\fileA-b-1.txt" />
+    <None Remove="TestData\FileServiceTestData\TestDirA\TestDirA-B\fileA-B-2.txt" />
+    <None Remove="TestData\FileServiceTestData\TestDirB\fileB-1.txt" />
+    <None Remove="TestData\FileServiceTestData\TestDirB\fileB-2.txt" />
+    <None Remove="TestData\FileServiceTestData\TestDirB\TestDirB-A\fileB-A-1.txt" />
+    <None Remove="TestData\FileServiceTestData\TestDirB\TestDirB-A\fileB-A-2.txt" />
+    <None Remove="TestData\FileServiceTestData\TestDirB\TestDirB-B\fileB-B-1.txt" />
+    <None Remove="TestData\FileServiceTestData\TestDirB\TestDirB-B\fileB-B-2.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="TestData\empty.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\FileServiceTestData\file2.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\FileServiceTestData\file1.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\FileServiceTestData\TestDirA\fileA-1.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\FileServiceTestData\TestDirA\fileA-2.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\FileServiceTestData\TestDirA\TestDirA-A\fileA-A-1.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\FileServiceTestData\TestDirA\TestDirA-A\fileA-A-2.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\FileServiceTestData\TestDirA\TestDirA-B\fileA-B-1.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\FileServiceTestData\TestDirA\TestDirA-B\fileA-B-2.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\FileServiceTestData\TestDirB\fileB-1.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\FileServiceTestData\TestDirB\fileB-2.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\FileServiceTestData\TestDirB\TestDirB-A\fileB-A-1.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\FileServiceTestData\TestDirB\TestDirB-A\fileB-A-2.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\FileServiceTestData\TestDirB\TestDirB-B\fileB-B-1.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\FileServiceTestData\TestDirB\TestDirB-B\fileB-B-2.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoBogus" Version="2.1.2" />
+    <PackageReference Include="Bogus" Version="22.3.2" />
+    <PackageReference Include="coverlet.msbuild" Version="2.1.1" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.7.0" />
+    <PackageReference Include="Shouldly" Version="3.0.0" />
+    <PackageReference Include="xunit" Version="2.3.1" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.3.1" />
+    <DotNetCliToolReference Include="dotnet-xunit" Version="2.3.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\StigsConfigLib\StigsConfigLib\StigsConfigLib.csproj" />
+    <ProjectReference Include="..\StigsUtils\StigsUtils.csproj" />
+  </ItemGroup>
+
+</Project>
