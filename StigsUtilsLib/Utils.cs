@@ -3,7 +3,7 @@
 using System;
 using System.IO;
 
-namespace StigsUtils {
+namespace StigsUtilsLib {
 	public static class Utils {
 		//EASY: unit test.
 		public static bool TryDeleteDirectory(string path, bool recursive = true, Action<Exception> exceptionCallback = null) {

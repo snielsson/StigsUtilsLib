@@ -5,7 +5,7 @@ using System.Collections.Concurrent;
 using System.Globalization;
 using System.Xml.Serialization;
 
-namespace StigsUtils {
+namespace StigsUtilsLib {
 	/// <summary>
 	///     A caching factory to avoid memory leaks in the XmlSerializer class.
 	///     See http://dotnetcodebox.blogspot.dk/2013/01/xmlserializer-class-may-result-in.html

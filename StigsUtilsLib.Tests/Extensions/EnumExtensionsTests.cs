@@ -3,10 +3,10 @@
 using System;
 using System.Collections.Generic;
 using Shouldly;
-using StigsUtils.Extensions;
+using StigsUtilsLib.Extensions;
 using Xunit;
 
-namespace StigsUtils.Tests.Extensions {
+namespace StigsUtilsLib.Tests.Extensions {
 	public class EnumExtensionsTests {
 
 		public enum TestEnum

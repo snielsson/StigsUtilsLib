@@ -3,9 +3,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using StigsUtils.Extensions;
+using StigsUtilsLib.Extensions;
 
-namespace StigsUtils {
+namespace StigsUtilsLib {
 	public static class Assert {
 		public static IEnumerable<string> AllFilesExist(params string[] files) => files.AssertAllFilesExist();
 		public static IEnumerable<string> AnyFileExists(params string[] files) => files.AssertAnyFileExists();

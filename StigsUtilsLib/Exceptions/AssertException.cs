@@ -3,7 +3,7 @@
 using System;
 using System.Runtime.Serialization;
 
-namespace StigsUtils.Exceptions {
+namespace StigsUtilsLib.Exceptions {
 	public class AssertException : Exception {
 		public AssertException() { }
 		public AssertException(string message) : base(message) { }

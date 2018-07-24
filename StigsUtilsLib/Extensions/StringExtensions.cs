@@ -5,9 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Newtonsoft.Json;
-using StigsUtils.Exceptions;
+using StigsUtilsLib.Exceptions;
 
-namespace StigsUtils.Extensions {
+namespace StigsUtilsLib.Extensions {
 
 	//EASY: document.
 	public static class StringExtensions {

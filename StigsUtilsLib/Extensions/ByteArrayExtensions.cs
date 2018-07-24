@@ -2,7 +2,7 @@
 
 using System.Text;
 
-namespace StigsUtils.Extensions {
+namespace StigsUtilsLib.Extensions {
 	//EASY: unit test.
 	/// <summary>
 	///     Common extension methods for byte arrays.

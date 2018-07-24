@@ -83,9 +83,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="AutoBogus" Version="2.1.2" />
-    <PackageReference Include="Bogus" Version="22.3.2" />
-    <PackageReference Include="coverlet.msbuild" Version="2.1.1" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.7.0" />
     <PackageReference Include="Shouldly" Version="3.0.0" />
     <PackageReference Include="xunit" Version="2.3.1" />
@@ -94,8 +91,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\StigsConfigLib\StigsConfigLib\StigsConfigLib.csproj" />
-    <ProjectReference Include="..\StigsUtils\StigsUtils.csproj" />
+    <ProjectReference Include="..\StigsUtilsLib\StigsUtilsLib.csproj" />
   </ItemGroup>
 
 </Project>

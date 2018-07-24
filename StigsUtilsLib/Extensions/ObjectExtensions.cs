@@ -2,7 +2,7 @@
 
 using Newtonsoft.Json;
 
-namespace StigsUtils.Extensions {
+namespace StigsUtilsLib.Extensions {
 	public static class ObjectExtensions {
 		private static readonly JsonSerializerSettings DefaultJsonSerializerSettings = new JsonSerializerSettings {
 			Formatting = Formatting.None

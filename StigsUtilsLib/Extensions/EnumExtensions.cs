@@ -5,7 +5,7 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace StigsUtils.Extensions {
+namespace StigsUtilsLib.Extensions {
 	public static class EnumExtensions {
 		private static readonly ConcurrentDictionary<Type, Dictionary<string, object>> EnumValues = new ConcurrentDictionary<Type, Dictionary<string, object>>();
 		public static T GetEnumValue<T>(this Type @this, string name) {

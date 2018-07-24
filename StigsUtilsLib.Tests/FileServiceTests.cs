@@ -1,11 +1,11 @@
 ﻿// Copyright © 2014-2018 Stig Schmidt Nielsson. This file is distributed under the MIT license - see LICENSE.txt or https://opensource.org/licenses/MIT. 
+
 using System.IO;
 using Shouldly;
-using StigsConfigLib;
-using StigsUtils.Extensions;
 using Xunit;
+using StringExtensions = StigsUtilsLib.Extensions.StringExtensions;
 
-namespace StigsUtils.Tests {
+namespace StigsUtilsLib.Tests {
 	public class FileServiceTests {
 		[Fact]
 		public void FileServiceConstructionWorks() {
@@ -18,7 +18,7 @@ namespace StigsUtils.Tests {
 		public void FileServiceSearchUpRequiresExistingDirAsStartDir() {
 			var fileService = new FileService("TestData/FileServiceTestData");
 			Should.Throw<FileService.NotExistingDirectoryException>(() => fileService.SearchUp("TestDirA/NonExisting", "fileA-1.txt"), "Should throw FileService.NotExistingDirectoryException when using non existing directory as start dir.");
-			var existingFile = "TestDirA/TestDirA-C/fileA-B-2.txt";
+			var existingFile = "TestDirA/TestDirA-B/fileA-B-2.txt";
 			fileService.FileExists(existingFile).ShouldBeTrue();
 			Should.Throw<FileService.NotExistingDirectoryException>(() => fileService.SearchUp(existingFile, "fileA-1.txt"), "Should throw FileService.NotExistingDirectoryException when using existing file as start dir.");
 		}

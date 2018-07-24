@@ -2,7 +2,7 @@
 
 using System.Collections.Generic;
 
-namespace StigsUtils.Extensions {
+namespace StigsUtilsLib.Extensions {
 	public static class ListExtensions {
 		public static IList<T> ClearAndAddRange<T>(this IList<T> @this, IList<T> content) {
 			@this.Clear();

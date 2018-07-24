@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using System.Threading.Tasks.Dataflow;
 
-namespace StigsUtils.Extensions {
+namespace StigsUtilsLib.Extensions {
 	public static class DataflowExtensions
 	{
 		public static void Post<T>(this ActionBlock<T> @this, IEnumerable<T> items) {

@@ -1,20 +1,19 @@
 // Copyright © 2014-2018 Stig Schmidt Nielsson. This file is distributed under the MIT license - see LICENSE.txt or https://opensource.org/licenses/MIT. 
 
 using System;
-using Microsoft.VisualStudio.TestPlatform.PlatformAbstractions;
 using Shouldly;
-using StigsUtils.Extensions;
+using StigsUtilsLib.Extensions;
 using Xunit;
 
-namespace StigsUtils.Tests.Extensions {
+namespace StigsUtilsLib.Tests.Extensions {
 
 	public class StringExtensionsTests {
 		[Fact]
 		public void AssertExistingDirectoryWorks() {
 			Should.Throw<ArgumentException>(() => ((string) null).AssertExistingDirectory());
 			Should.Throw<ArgumentException>(() => string.Empty.AssertExistingDirectory());
-			Should.Throw<ArgumentException>(() => "does not exist".AssertExistingDirectory());
-			Should.Throw<ArgumentException>(() => "TestData/empty.txt"
+			Should.Throw<StringExtensions.AssertExistingDirectoryException>(() => "does not exist".AssertExistingDirectory());
+			Should.Throw<StringExtensions.AssertExistingDirectoryException>(() => "TestData/empty.txt"
 				.AssertExistingFile()
 				.AssertExistingDirectory());
 			Should.NotThrow(() => "TestData".AssertExistingDirectory());
@@ -23,9 +22,9 @@ namespace StigsUtils.Tests.Extensions {
 		public void AssertExistingFileWorks() {
 			Should.Throw<ArgumentException>(() => ((string) null).AssertExistingFile());
 			Should.Throw<ArgumentException>(() => string.Empty.AssertExistingFile());
-			Should.Throw<ArgumentException>(() => "does not exist".AssertExistingFile());
+			Should.Throw<StringExtensions.AssertExistingFileException>(() => "does not exist".AssertExistingFile());
 			Should.NotThrow(() => "TestData/empty.txt".AssertExistingFile());
-			Should.Throw<ArgumentException>(() => "TestData"
+			Should.Throw<StringExtensions.AssertExistingFileException>(() => "TestData"
 				.AssertExistingDirectory()
 				.AssertExistingFile());
 		}
@@ -33,8 +32,8 @@ namespace StigsUtils.Tests.Extensions {
 		[Fact]
 		public void FileNamePartsWorks() {
 			Should.Throw<ArgumentNullException>(() => ((string) null).FileNameParts());
-			"".FileNameParts().ShouldBeEmpty();
-			".".FileNameParts().ShouldBe(new[] { "" });
+			"".FileNameParts().ShouldBe(new[] { "" });
+			".".FileNameParts().ShouldBe(new[] { "", "" });
 			"a.".FileNameParts().ShouldBe(new[] { "a", "" });
 			"a.b".FileNameParts().ShouldBe(new[] { "a", "b" });
 			"a.b.c".FileNameParts().ShouldBe(new[] { "a", "b", "c"});
